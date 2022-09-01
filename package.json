@@ -1,16 +1,18 @@
 {
   "dependencies": {
-    "apollo-server-express": "^3.10.2"
+    "apollo-server-express": "^3.10.2",
+    "concurrently": "^7.3.0"
   },
   "name": "gamr",
   "description": "Project 3 Group 1",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "cd ./server && nodemon server.js",
+    "dev:client": "cd ./client && npm start",
     "build": "concurrently \"cd ./client && npm run build\" \"cd ./server && npm install\"",
-    "start": "cd ./server && node server.js"
+    "start": "cd ./server && node server.js",
+    "dev": "concurrently \"npm run dev:server\"  \"npm run dev:client\""
   },
   "repository": {
     "type": "git",

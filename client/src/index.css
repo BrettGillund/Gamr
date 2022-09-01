@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +18,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#logoPic {
+  border-radius: 10%;
+  border: 5px solid white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 3%;
+  margin-bottom: 30px;
+  background: rgb(40, 40, 40);
+}
+
+header * {
+  color: #fff;
+}
+
+header nav a {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+header nav a.active {
+  text-decoration:underline;
 }
