@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const {Schema, mongoose, model} = require('mongoose');
 
 
 // this is a rough draft....
@@ -6,18 +6,25 @@ const {Schema, model} = require('mongoose');
 // this needs to be tweaked 
 
 const profileSchema = new Schema ({
-    game: {
-        type: String,
-        required: true
-    },
-    console: {
-        type: String,
-        required:true
-    },
+
     gamerTag: {
         type: String,
-        required: true
-    }
+    },
+    faveConsole: {
+        type: String,
+    },
+    faveGame: {
+        type: String,
+    },
+    User:[{
+
+        type: mongoose.Types.ObjectId,
+        ref: 'User' 
+    }]
+
+
+
+
 
 })
 

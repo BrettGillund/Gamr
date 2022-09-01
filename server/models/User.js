@@ -1,4 +1,4 @@
-const { Schema, model, SchemaTypes } = require('mongoose');
+const { Schema, model, SchemaTypes, default: mongoose } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // eventually we can get into bcypt to hide the users password 
@@ -21,9 +21,9 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  profiles: [{
-    type: SchemaTypes.ObjectId,
-    ref: 'profile'
+  profile: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'Profile'
   }]
 }, 
 );

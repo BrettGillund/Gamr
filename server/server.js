@@ -25,9 +25,12 @@ async function startServer(typeDefs, resolvers) {
 
     server.applyMiddleware({app});
 
-    app.listen(PORT, () => {
-        console.log('app sarted on port %s',  PORT);
-        console.log('GraphQl is ready on %s', server.graphqlPath)
+    
+    db.once('open', () => {
+        app.listen(PORT, () => {
+            console.log('app sarted on port %s',  PORT);
+            console.log('GraphQl is ready on %s', server.graphqlPath)
+        })
     })
 }
 
