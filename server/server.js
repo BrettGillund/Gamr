@@ -1,7 +1,10 @@
 const express = require('express')
 const path = require('path');
 const {ApolloServer, gql} = require('apollo-server-express')
+const db = require('./config/connection')
 const PORT = process.env.PORT || 3333;
+// Pull in the TypeDefs which pull in the models
+const {typeDefs, resolvers} = require('./schemas')
 
 const app = express();
                                             // this is connecting server with "client"/ build
@@ -9,23 +12,7 @@ const app = express();
                                             // this is connecting server with the build
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-const typeDefs = gql `
-type Query {
-    james: String
-    brett: String
-}
-`;
 
-const resolvers = {
-    Query: {
-        james() {
-            return 'Hi there!'
-        },
-        brett() {
-            return 'I am authenticator'
-        }
-    }
-}
 
 async function startServer(typeDefs, resolvers) {
     const server = new ApolloServer({
@@ -33,7 +20,7 @@ async function startServer(typeDefs, resolvers) {
         resolvers
         
     });
-    // that waits for server to start then... 
+  
     await server.start();
 
     server.applyMiddleware({app});
