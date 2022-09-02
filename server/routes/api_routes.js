@@ -8,5 +8,12 @@ api_router.get('/api/games', (req, res) => {
         res.json(data.data);
     });
 });
+api_router.get('/api/games/pc', (req, res) => {
+    console.log('this route is hit')
+    axios.get(`https://api.rawg.io/api/platforms?key=${process.env.API_KEY}`).then((data) => {
+        console.log(data.data)
+        res.json(data.data);
+    })
+})
 
 module.exports = api_router;
