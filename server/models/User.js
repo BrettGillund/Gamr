@@ -1,5 +1,6 @@
-const { Schema, model, SchemaTypes, default: mongoose } = require('mongoose');
+const { Schema, model, SchemaTypes} = require('mongoose');
 const bcrypt = require('bcrypt');
+const Library = require('./Library')
 
 // eventually we can get into bcypt to hide the users password 
 
@@ -21,11 +22,18 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  profile: [{
-    type: mongoose.Types.ObjectId,
-    ref: 'Profile'
+  gamerTag: {
+    type: String
+  },
+  faveConsole: {
+    type: String
+  },
+  library: [{
+    type: SchemaTypes.ObjectId,
+    ref: 'Library'
   }]
-}, 
+},
+ 
 );
 
 userSchema.pre('save', async function() {

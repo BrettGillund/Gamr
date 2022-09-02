@@ -25,7 +25,6 @@ async function startServer(typeDefs, resolvers) {
 
     server.applyMiddleware({app});
 
-    
     db.once('open', () => {
         app.listen(PORT, () => {
             console.log('app sarted on port %s',  PORT);

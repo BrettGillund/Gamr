@@ -4,25 +4,25 @@ const typeDefs = gql`
   type User {
     _id: ID!
     email: String!
-    profile: [Profile]
-  }
-
-  type Profile {
-    _id: ID!
     gamerTag: String
     faveConsole: String
-    faveGame: String
-    user: User
+    library: [Library]
+  }
+
+  type Library {
+    _id: String!
+    game: String
   }
 
   type Query {
-    getUsers: [User!]!
-    getProfile: [Profile!]!
+    getUsers: [User]
+    getGames: [Library]
   }
 
+
   type Mutation {
-    addUser(email: String!, password: String!): User!
-    addProfile( gamerTag: String!, faveConsole: String!, faveGame: String!, user: String! ): Profile!
+    addUser(email: String!, password: String!, gamerTag: String!, faveConsole: String!, faveGame: String!): User
+    addGame(userId: String!, game: String!): Library
   }
 `;
 
