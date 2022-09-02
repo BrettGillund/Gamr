@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 function Games() {
-  const [gameData, setGameData] = useState([]);
+  const [switchData, setSwitchData] = useState([]);
 
   const grabData = () => {
-    fetch("/api/games")
+    fetch("/api/nintendo-switch")
       .then((res) => res.json())
       .then((data) => {
-        setGameData(data.results);
+        setSwitchData(data.results);
         console.log(data.results);
       });
   };
@@ -19,12 +19,12 @@ function Games() {
   };
   return (
     <div>
-      <h3>Game Data</h3>
-      {gameData.map((game, index) => {
+      <h1>Switch Games</h1>
+      {switchData.map((nintendoSW, index) => {
         return (
           <div key={index} className="game-card">
-            <img style={divStyle} src={game.background_image}></img>
-            <p>{game.name} {game.rating}</p>
+            <img style={divStyle} src={nintendoSW.background_image}></img>
+            <p>{nintendoSW.name} {nintendoSW.rating}</p>
           </div>
         );
       })}

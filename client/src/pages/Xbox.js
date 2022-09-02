@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 function Games() {
-  const [gameData, setGameData] = useState([]);
+  const [xboxData, setXboxData] = useState([]);
 
   const grabData = () => {
-    fetch("/api/games")
+    fetch("/api/xbox")
       .then((res) => res.json())
       .then((data) => {
-        setGameData(data.results);
+        setXboxData(data.results);
         console.log(data.results);
       });
   };
@@ -19,12 +19,12 @@ function Games() {
   };
   return (
     <div>
-      <h3>Game Data</h3>
-      {gameData.map((game, index) => {
+      <h1>Xbox Games</h1>
+      {xboxData.map((xbox, index) => {
         return (
           <div key={index} className="game-card">
-            <img style={divStyle} src={game.background_image}></img>
-            <p>{game.name} {game.rating}</p>
+            <img style={divStyle} src={xbox.background_image}></img>
+            <p>{xbox.name} {xbox.rating}</p>
           </div>
         );
       })}

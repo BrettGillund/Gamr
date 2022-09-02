@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 function Games() {
-  const [gameData, setGameData] = useState([]);
+  const [playStationData, setPlaystationData] = useState([]);
 
   const grabData = () => {
-    fetch("/api/games")
+    fetch("/api/playstation")
       .then((res) => res.json())
       .then((data) => {
-        setGameData(data.results);
+        setPlaystationData(data.results);
         console.log(data.results);
       });
   };
@@ -19,12 +19,12 @@ function Games() {
   };
   return (
     <div>
-      <h3>Game Data</h3>
-      {gameData.map((game, index) => {
+      <h1>PlayStation Data</h1>
+      {playStationData.map((playstation, index) => {
         return (
           <div key={index} className="game-card">
-            <img style={divStyle} src={game.background_image}></img>
-            <p>{game.name} {game.rating}</p>
+            <img style={divStyle} src={playstation.background_image}></img>
+            <p>{playstation.name} {playstation.rating}</p>
           </div>
         );
       })}
