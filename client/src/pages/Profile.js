@@ -21,7 +21,9 @@ function Profile() {
                 </span>
             )}
         </div>
+
   )
 }
 
 export default Profile;
+
