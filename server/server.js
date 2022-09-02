@@ -15,7 +15,11 @@ const app = express();
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.use('/', api_routes);
+
 // app.use('/pc', api_routes);
+
+app.use('/', api_routes);
+
 
 async function startServer(typeDefs, resolvers) {
   const server = new ApolloServer({

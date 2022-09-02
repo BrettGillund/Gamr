@@ -18,13 +18,19 @@ function Games() {
     width: "300px",
   };
   return (
-    <div>
-      <h3>Game Data</h3>
+    <div className="game-container">
       {gameData.map((game, index) => {
         return (
-          <div key={index} className="game-card">
-            <img style={divStyle} src={game.background_image}></img>
-            <p>{game.name} {game.rating}</p>
+          <div key={index}>
+            <div className="game-card">
+              <img style={divStyle} src={game.background_image}></img>
+              <p>
+                {game.name}
+              </p>
+              <p>
+              Rating: {game.rating} / {game.rating_top}
+              </p>
+            </div>
           </div>
         );
       })}

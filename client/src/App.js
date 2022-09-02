@@ -3,6 +3,7 @@ import Games from "./pages/Games";
 import Profile from "./pages/Profile"
 import Sidebar from "./components/Sidebar";
 import Landing from "./pages/Landing";
+import PC from "./pages/Pc"
 import { Routes, Route } from "react-router-dom";
 import Pc from "./pages/Pc"
 import Playstation from "./pages/Playstation"
@@ -21,10 +22,14 @@ function App() {
           <Route path="/" element={<Landing></Landing>}></Route>
           <Route path="/profile" element={<Profile></Profile>}></Route>
           <Route path="/games" element={<Games></Games>}></Route>
+
           <Route path="/games/pc" element={<Pc/>}></Route>
           <Route path="/games/playstation" element={<Playstation/>}></Route>
           <Route path="/games/xbox" element={<Xbox/>}></Route>
           <Route path="/games/nintendo-switch" element={<Switch/>}></Route>
+
+         
+
         </Routes>
       </div>
     </div>
