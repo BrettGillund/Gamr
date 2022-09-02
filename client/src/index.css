@@ -74,3 +74,18 @@ header nav a.active {
 .main {
   display: flex
 }
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.game-card {
+  border: 1px solid black;
+  margin: 20px;
+  color: white;
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+}
+

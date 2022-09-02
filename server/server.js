@@ -14,8 +14,8 @@ const app = express();
 // this is connecting server with the build
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.use('/games', api_routes);
-app.use('/games/pc', api_routes);
+app.use('/', api_routes);
+app.use('/', api_routes);
 
 async function startServer(typeDefs, resolvers) {
   const server = new ApolloServer({
