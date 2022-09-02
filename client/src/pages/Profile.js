@@ -1,32 +1,27 @@
-import {
-    useQuery,
-    gql
-} from '@apollo/client'
+import { useQuery } from '@apollo/client';
+import { PROFILE_QUERY } from '../utils/queries';
 
-const PROFILE_QUERY = gql`
-query getProfile{
-    getProfile{
-        _id
-        game
-        console
-        gamerTag
-    }
-}
-`
 
 function Profile() {
     const { loading, error, data } = useQuery(PROFILE_QUERY)
 
     return(
         <div>
-            {error ? <p>{error}</p> : loading ? <p>Loading user profile...</p> : (
+            {error && <p className="error">{error.message}</p>}
+
+            {loading && <p>Loading user profile...</p>}
+
+            {data && !data.getUsers.length && <p>No profile data to load.</p>}
+
+            {data && (
                 <span>
-                    {data}
-                    <h3></h3>
-                    <h3></h3>
-                    <h3></h3>
+                    {data.getUsers.map(user => (
+                    <h3 key={user._id}>{user.gamerTag}</h3>
+                    ))}
                 </span>
             )}
         </div>
-    )
+  )
 }
+
+export default Profile;
