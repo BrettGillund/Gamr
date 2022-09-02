@@ -30,7 +30,7 @@ const userSchema = new Schema({
   },
   // library: [Library]
   library: [{
-    type: SchemaTypes.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Library'
   }]
 },

@@ -6,7 +6,7 @@ const typeDefs = gql`
     email: String!
     gamerTag: String
     faveConsole: String
-    library: [Library]
+    library: Library
   }
 
   type Library {
@@ -15,7 +15,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getUsers: [User]
+    users: [User]
     getGames: [Library]
   }
 
