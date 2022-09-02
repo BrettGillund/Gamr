@@ -1,3 +1,4 @@
+
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
@@ -8,21 +9,16 @@ const typeDefs = gql`
     faveConsole: String
     library: [Library]
   }
-
   type Library {
     _id: String!
     game: String
    
-
   }
-
   type Query {
     getUsers: [User]
     getGames: [Library]
     getOneUser(id: ID): User
   }
-
-
   type Mutation {
     addUser(email: String!, password: String!, gamerTag: String!, faveConsole: String!, faveGame: String!): User
     addGame(user: ID!, game: String!): Library
