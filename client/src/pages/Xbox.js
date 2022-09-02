@@ -1,14 +1,13 @@
-
 import { useState, useEffect } from "react";
 
 function Games() {
-  const [pcData, setPcData] = useState([]);
+  const [xboxData, setXboxData] = useState([]);
 
   const grabData = () => {
-    fetch("/api/pc")
+    fetch("/api/xbox")
       .then((res) => res.json())
       .then((data) => {
-        setPcData(data.results);
+        setXboxData(data.results);
         console.log(data.results);
       });
   };
@@ -20,12 +19,12 @@ function Games() {
   };
   return (
     <div>
-      <h3>pc Data</h3>
-      {pcData.map((pc, index) => {
+      <h1>Xbox Games</h1>
+      {xboxData.map((xbox, index) => {
         return (
           <div key={index} className="game-card">
-            <img style={divStyle} src={pc.background_image}></img>
-            <p>{pc.name} {pc.rating}</p>
+            <img style={divStyle} src={xbox.background_image}></img>
+            <p>{xbox.name} {xbox.rating}</p>
           </div>
         );
       })}
@@ -34,4 +33,3 @@ function Games() {
 }
 
 export default Games;
-
