@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.2",
     "mongoose": "^6.5.4"
   }
 }

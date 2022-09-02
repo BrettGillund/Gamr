@@ -6,7 +6,7 @@ function Header() {
     <header>
         <img id="logoPic" src={logo} alt="logo" />
          <nav>
-           <NavLink to="/" >Home</NavLink>
+           <NavLink to="/">Home</NavLink>
            <NavLink to="/auth-form">Register/Login</NavLink>
         </nav>
     </header>
