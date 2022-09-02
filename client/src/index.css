@@ -8,15 +8,15 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -30,8 +30,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 7px 3%;
-  margin-bottom: 30px;
   background: rgb(40, 40, 40);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header * {
@@ -45,5 +45,32 @@ header nav a {
 }
 
 header nav a.active {
-  text-decoration:underline;
+  text-decoration: underline;
+}
+
+#sBarMain {
+  font-size: x-large;
+}
+
+.sidebar {
+  background-color: rgb(40, 40, 40);
+  color: #fff;
+  max-width: 10%;
+  height: 100vh;
+  display: inline-block;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a {
+  display: block;
+  padding: 25px 10px;
+  font-size: 1.5rem;
+}
+
+.sidebar a.active {
+  text-decoration: underline;
+}
+
+.main {
+  display: flex
 }

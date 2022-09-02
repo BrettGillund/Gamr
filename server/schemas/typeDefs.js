@@ -4,7 +4,7 @@ const typeDefs = gql`
   type User {
     _id: ID!
     email: String!
-    password:
+    password: String!
   }
 
   type Profile {
