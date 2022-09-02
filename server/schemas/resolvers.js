@@ -1,5 +1,5 @@
 const {User, Library} = require('../models')
-
+const { SchemaTypes } = require('mongoose')
 const resolvers = {
     Query: {
         async getUsers() {
@@ -22,8 +22,8 @@ const resolvers = {
         async addGame(_, { game, user: userId }) {
             const newGame = new Library({ game, user: userId})
             const createdGame = await newGame.save();
-            const user = await User.findById(mongoose.Types.ObjectId(userId));
-            user.profile.push(createdGame._id);
+            const user = await User.findById(SchemaTypes.ObjectId(userId));
+            user.library.push(createdGame._id);
             await user.save();
             return createdGame;
         }

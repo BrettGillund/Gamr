@@ -10,7 +10,7 @@ const typeDefs = gql`
   }
 
   type Library {
-    _id: String!
+    _id: String
     game: String
   }
 

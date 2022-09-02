@@ -28,6 +28,7 @@ const userSchema = new Schema({
   faveConsole: {
     type: String
   },
+  // library: [Library]
   library: [{
     type: SchemaTypes.ObjectId,
     ref: 'Library'
