@@ -1,6 +1,6 @@
-const { Schema, model, SchemaTypes} = require('mongoose');
+const { Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
-const Library = require('./Library')
+
 
 // eventually we can get into bcypt to hide the users password 
 
@@ -29,7 +29,7 @@ const userSchema = new Schema({
     type: String
   },
   library: [{
-    type: SchemaTypes.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Library'
   }]
 },
