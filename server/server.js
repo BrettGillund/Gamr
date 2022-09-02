@@ -22,6 +22,7 @@ async function startServer(typeDefs, resolvers) {
     resolvers,
   });
 
+
   await server.start();
 
   server.applyMiddleware({app})

@@ -12,17 +12,22 @@ const typeDefs = gql`
   type Library {
     _id: String
     game: String
+   
+
   }
 
   type Query {
     users: [User]
     getGames: [Library]
+    getOneUser(id: ID): User
   }
 
 
   type Mutation {
     addUser(email: String!, password: String!, gamerTag: String!, faveConsole: String!, faveGame: String!): User
-    addGame(userId: String!, game: String!): Library
+    addGame(user: ID!, game: String!): Library
+    deleteUser(userId: ID!): User
+    deleteGame(gameId: ID!): Library
   }
 `;
 
