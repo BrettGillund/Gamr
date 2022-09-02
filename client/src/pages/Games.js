@@ -23,9 +23,10 @@ function Games() {
         <h3>Game Data</h3>
       {gameData.map((game, index) => {
         return (
-          <div className='game-card'> 
-            <img style={divStyle} key={index} src={game.background_image}></img>
-            <p key={index}>{game.name} {game.rating}</p>
+          <div 
+          key={index} className='game-card'> 
+            <img style={divStyle}  src={game.background_image}></img>
+            <p >{game.name} {game.rating}</p>
           </div>
           )
       })}
