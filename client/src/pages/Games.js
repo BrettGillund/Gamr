@@ -7,7 +7,7 @@ function Games() {
       fetch('/api/games')
         .then(res => res.json())
         .then(data => {
-          // console.log(data);
+          console.log(data.results);
           setGameData(data.results);
         });
     };
@@ -18,7 +18,7 @@ function Games() {
     <div>
         <h3>Game Data</h3>
       {gameData.map((game, index) => {
-        return <p key={index}>{game.name}</p>
+        return (<div key={index}>{game.name}{game.rating}</div>)
       })}
     </div>
   )
