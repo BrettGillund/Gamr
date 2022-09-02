@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../index.css";
+import { Route, Routes } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -8,10 +9,10 @@ function Sidebar() {
       <NavLink id="sBarMain" to="/">
         Home
       </NavLink>
-      <NavLink id="sBarMain" to="profile">
+      <NavLink id="sBarMain" to="/profile">
         Profile
       </NavLink>
-      <NavLink id="sBarMain" to="games">
+      <NavLink id="sBarMain" to="/games">
         Games
       </NavLink>
       <h1 id="sBarMain">Platforms</h1>
