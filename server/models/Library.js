@@ -4,7 +4,11 @@ const librarySchema = new Schema({
   game: {
     type: String,
     required: true
-  }
+  } 
+  // User: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }
 });
 
 const Library = model('Library', librarySchema);
