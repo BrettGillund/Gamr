@@ -27,12 +27,12 @@ function App() {
   return (
     <div>
 
-      <Header />
+      <Header user={user}/>
       <div className="main">
         <Sidebar />
         <Routes>
           <Route path="/" element={<Landing user={user}></Landing>}></Route>
-          <Route path="/auth-form" element={<AuthForm></AuthForm>}></Route>
+          <Route path="/auth-form" element={<AuthForm setUser={setUser}></AuthForm>}></Route>
 
           <Route path="/profile" element={
             <Protect>
