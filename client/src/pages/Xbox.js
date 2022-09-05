@@ -18,13 +18,15 @@ function Games() {
     width: "300px",
   };
   return (
-    <div>
-      <h1>Xbox Games</h1>
+    <div className="game-container">
       {xboxData.map((xbox, index) => {
         return (
           <div key={index} className="game-card">
             <img style={divStyle} src={xbox.background_image}></img>
-            <p>{xbox.name} {xbox.rating}</p>
+            <p>{xbox.name}</p>
+            <p>
+                Rating: {xbox.rating} / {xbox.rating_top}
+              </p>
           </div>
         );
       })}

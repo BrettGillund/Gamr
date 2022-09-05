@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 function Games() {
@@ -19,13 +18,15 @@ function Games() {
     width: "300px",
   };
   return (
-    <div>
-      <h3>pc Data</h3>
+    <div className="game-container">
       {pcData.map((pc, index) => {
         return (
           <div key={index} className="game-card">
             <img style={divStyle} src={pc.background_image}></img>
-            <p>{pc.name} {pc.rating}</p>
+            <p>{pc.name}</p>
+            <p>
+              Rating: {pc.rating} / {pc.rating_top}
+            </p>
           </div>
         );
       })}
@@ -34,4 +35,3 @@ function Games() {
 }
 
 export default Games;
-
