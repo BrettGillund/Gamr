@@ -37,10 +37,19 @@ const userSchema = new Schema({
  
 );
 
-userSchema.pre('save', async function() {
-  const hased_pass = await bcrypt.hash(this.password, 10);
-  this.passweord =
-  console.log('this gets printed first');
+userSchema.pre(['insertMany', 'save'], async function (next, users) {
+  if (Array.isArray(users)) {
+    const hashed_users = users.map(async user => {
+      const hashed_pass = await bcrypt.hash(user.password, 10);
+      user.password = hashed_pass;
+      return user;
+    });
+    console.log(await Promise.all(hashed_users));
+    return next();
+  }
+
+  const hashed_pass = await bcrypt.hash(this.password, 10);
+  this.password = hashed_pass;
 });
 
 userSchema.methods.validatePass = async function (unencryted_password) {
