@@ -7,11 +7,11 @@ function Protect(props) {
   const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthenticated() && location.pathname.match(/games|/ig))
+    if (!isAuthenticated() && location.pathname.match(/profile|/ig))
       navigate('/auth-form');
 
-    if (isAuthenticated() && (location.pathname.match(/\/|auth-form/ig)))
-      navigate('/');
+    // if (isAuthenticated() && (location.pathname.match(/\/|auth-form/ig)))
+    //   navigate('/');
   }, []);
 
   return (
