@@ -1,6 +1,8 @@
 const {User, Library} = require('../models')
 const {mongoose} = require('mongoose')
 const { findByIdAndDelete } = require('../models/Library')
+const { signToken } = require('../auth');
+const { ApolloError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
@@ -18,12 +20,15 @@ const resolvers = {
 
     Mutation: {
         async addUser(_, { email, password, gamerTag, faveConsole }, context) {
-            return await User.create({
-                email,
-                password,
-                gamerTag,
-                faveConsole,
-            });
+            try {
+                const user = await User.create({ email, password, gamerTag, faveConsole });
+        
+                const token = signToken(user);
+                return { user, token };
+        
+              } catch (err) {
+                throw new ApolloError(err);
+              }
         },        
         async loginUser(_, { email, password }, context) {
             const user = await User.findOne({ email });
