@@ -65,6 +65,7 @@ header nav a.active {
   display: block;
   padding: 25px 10px;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .sidebar a.active {
