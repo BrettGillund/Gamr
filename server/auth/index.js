@@ -6,7 +6,6 @@ const JWT_SECRET = 'jsonwebtoken secret string, super duper secret';
 module.exports = {
   authMiddleware({ req }) {
     let token = req.headers.authorization;
-    console.log('test');
 
     if (!token) return req;
 
