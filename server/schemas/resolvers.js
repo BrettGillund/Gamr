@@ -24,6 +24,21 @@ const resolvers = {
                 gamerTag,
                 faveConsole,
             });
+        },        
+        async loginUser(_, { email, password }, context) {
+            const user = await User.findOne({ email });
+
+            if (!user) throw new ApolloError('There does not appear to be a user with the specified email address');
+
+            if (!user.validatePass(password)) throw new ApolloError('Your password is incorrect');
+
+            try {
+                const token = signToken(user);
+
+                return { user, token };
+            } catch (err) {
+              throw new ApolloError(err);
+            }
         },
         async addGame(_, {game, user: userId}) {
           

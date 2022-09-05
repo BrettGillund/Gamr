@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3333;
 const api_routes = require('./routes/api_routes');
 // Pull in the TypeDefs which pull in the models
 const { typeDefs, resolvers } = require("./schemas");
+const { authMiddleware } = require('./auth');
 
 const app = express();
 // this is connecting server with "client"/ build
@@ -18,13 +19,11 @@ app.use('/', api_routes);
 
 // app.use('/pc', api_routes);
 
-app.use('/', api_routes);
-
-
 async function startServer(typeDefs, resolvers) {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: (authMiddleware)
   });
 
 

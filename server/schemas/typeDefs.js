@@ -14,15 +14,20 @@ const typeDefs = gql`
     game: String
    
   }
+  type Auth {
+    user: User
+    token: ID
+  }
   type Query {
     getUsers: [User]
     getGames: [Library]
     getOneUser(id: ID): User
   }
   type Mutation {
-    addUser(email: String!, password: String!, gamerTag: String!, faveConsole: String!, faveGame: String!): User
+    addUser(email: String!, password: String!, gamerTag: String, faveConsole: String, faveGame: String): Auth
+    loginUser(email: String!, password: String!): Auth
     addGame(user: ID!, game: String!): Library
-    deleteUser(userId: ID!): User
+    deleteUser(userId: ID!): Auth
     deleteGame(gameId: ID!): Library
   }
 `;

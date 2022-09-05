@@ -4,7 +4,7 @@ import { PROFILE_QUERY } from '../utils/queries';
 
 function Profile() {
     const { loading, error, data } = useQuery(PROFILE_QUERY)
-
+console.log(data)
     return(
         <div>
             {error && <p className="error">{error.message}</p>}
@@ -24,5 +24,6 @@ function Profile() {
 
   )
 }
+
 
 export default Profile;
