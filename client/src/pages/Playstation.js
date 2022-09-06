@@ -20,7 +20,7 @@ function Games() {
   return (
 
     <div>
-      <h1 className="centerText">PlayStation Data</h1>
+      <h1 className="centerText biggestText">PlayStation Data</h1>
       <div className="game-container">
       {playStationData.map((playstation, index) => {
         return (

@@ -48,15 +48,15 @@ header nav a.active {
   text-decoration: underline;
 }
 
-#sBarMain {
+.sBarMain {
   font-size: x-large;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
+  width: 10vw;
 }
 
 .sidebar {
   background-color: rgb(40, 40, 40);
   color: #fff;
-  max-width: 10%;
   height: 100vh;
   display: inline-block;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -78,6 +78,7 @@ header nav a.active {
 
 .main {
   display: flex;
+  background-color: rgb(230, 230, 230);
 }
 
 .profLogin {
@@ -109,6 +110,12 @@ header nav a.active {
 }
 .profile {
   margin: auto;
+}
+.biggestText {
+  font-size: 3vh
+}
+.biggerText {
+  font-size: x-large !important;
 }
 
 .profContainer {
@@ -174,6 +181,7 @@ header nav a.active {
   font-size: x-large;
   width: fit-content;
   block-size:fit-content;
+  
 }
 .game-search input {
   margin: 20px;
@@ -210,6 +218,73 @@ header nav a.active {
   height: 300px;
 }
 
-.landingContainer {
+.landingContainer1 {
+  margin: auto 50px;
+  padding: 25px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  max-width: 30vw;
+  
+}
+.landingContainer2 {
+  margin: auto 50px;
+  padding: 25px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  max-width: 30vw;
+}
+.landingContainerSS {
+  width: 40vw;
+  border-radius: 2rem;
+}
+.divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
 
+.divider-black {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.tabStyling {
+width: 100vw;
+color: 40,40,40;
+}
+
+.tabStyling button.active {
+  color: white !important;
+}
+
+.apiContainer {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 2rem;
+}
+.landingPage {
+text-align: center;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+background-color: rgb(240, 240, 240);
+}
+
+.searchContainer {
+
+}
+
+.sidebarlogos {
+  width: 2.25vw;
+  display: inline;
+  vertical-align:baseline;
 }

@@ -1,28 +1,37 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../index.css";
-import { Route, Routes } from "react-router-dom";
+import pclogo from "../images/tower-pc.png";
+import playstationlogo from "../images/playstation.png";
+import xboxlogo from "../images/xbox.png";
+import nSwitchlogo from "../images/nintendo-switch.png";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <NavLink id="sBarMain" to="/">
+      <NavLink className="sBarMain" to="/">
         Home
       </NavLink>
-      <NavLink id="sBarMain" to="/profile">
+      <NavLink className="sBarMain" to="/profile">
         Profile
       </NavLink>
-      <NavLink id="sBarMain" to="/search">
+      <NavLink className="sBarMain" to="/search">
         Search
       </NavLink>
-      <NavLink id="sBarMain" to="/games">
-        Games
+      <h1 className="sBarMain platform">Platforms</h1>
+      <NavLink to="games/pc">
+        PC <img className="sidebarlogos" src={pclogo} />
       </NavLink>
-      <h1 id="sBarMain" className="platform">Platforms</h1>
-      <NavLink to="games/pc">PC</NavLink>
-      <NavLink to="games/playstation">Playstation</NavLink>
-      <NavLink to="games/xbox">Xbox</NavLink>
-      <NavLink to="games/nintendo-switch">Nintendo Switch</NavLink>
+      <NavLink to="games/playstation">
+        Playstation
+        <img className="sidebarlogos" src={playstationlogo} />{" "}
+      </NavLink>
+      <NavLink to="games/xbox">
+        Xbox <img className="sidebarlogos" src={xboxlogo} />
+      </NavLink>
+      <NavLink to="games/nintendo-switch">
+        Nintendo Switch <img className="sidebarlogos" src={nSwitchlogo} />
+      </NavLink>
     </div>
   );
 }

@@ -20,7 +20,7 @@ function Games() {
   return (
 
     <div>
-      <h1 className="centerText">Switch Games</h1>
+      <h1 className="centerText biggestText">Switch Games</h1>
       <div className="game-container">
 
       {switchData.map((nintendoSW, index) => {
