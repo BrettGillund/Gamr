@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 
 function AuthForm(props) {
+
+  console.log(props)
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
@@ -32,6 +34,7 @@ function AuthForm(props) {
 
     localStorage.setItem('token', token);
     props.setUser(user);
+    console.log(user)
 
     navigate('/');
   };

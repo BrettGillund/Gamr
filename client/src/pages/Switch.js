@@ -18,7 +18,11 @@ function Games() {
     width: "300px",
   };
   return (
-    <div className="game-container">
+
+    <div>
+      <h1>Switch Games</h1>
+      <div className="game-container">
+
       {switchData.map((nintendoSW, index) => {
         return (
           <div key={index} className="game-card">
@@ -30,6 +34,7 @@ function Games() {
           </div>
         );
       })}
+      </div>
     </div>
   );
 }

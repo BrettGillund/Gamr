@@ -18,18 +18,22 @@ function Games() {
     width: "300px",
   };
   return (
-    <div className="game-container">
-      {pcData.map((pc, index) => {
-        return (
-          <div key={index} className="game-card">
-            <img style={divStyle} src={pc.background_image}></img>
-            <p>{pc.name}</p>
-            <p>
-              Rating: {pc.rating} / {pc.rating_top}
-            </p>
-          </div>
-        );
-      })}
+
+    <div>
+      <h1>PC Games</h1>
+      <div className="game-container">
+        {pcData.map((pc, index) => {
+          return (
+            <div key={index} className="game-card">
+              <a href="http://www.google.com" target="_blank">
+              <img style={divStyle} src={pc.background_image}/>
+              </a>
+              <p>{pc.name}</p>
+            </div>
+          );
+        })}
+      </div>
+
     </div>
   );
 }

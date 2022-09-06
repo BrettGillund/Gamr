@@ -18,6 +18,11 @@ function Games() {
     width: "300px",
   };
   return (
+
+
+    <div>
+
+      <h1>Top games of the year</h1>
     <div className="game-container">
       {gameData.map((game, index) => {
         return (
@@ -32,6 +37,8 @@ function Games() {
           </div>
         );
       })}
+    </div>
+
     </div>
   );
 }

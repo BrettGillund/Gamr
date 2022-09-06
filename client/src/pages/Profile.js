@@ -2,11 +2,13 @@ import { useQuery } from "@apollo/client";
 import { PROFILE_QUERY } from "../utils/queries";
 
 function Profile() {
+
   const { loading, error, data } = useQuery(PROFILE_QUERY);
 
   return (
     <div className="profile">
       {error && <p className="error">{error.message}</p>}
+
 
       {loading && <p>Loading user profile...</p>}
 
