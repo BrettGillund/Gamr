@@ -1,7 +1,7 @@
-function Landing() {
+function Landing(props) {
   return (
     <div>
-        <h1>Welcome Guest</h1>
+        <h1>Welcome {props.user ? props.user.email : 'Guest'}!</h1>
     </div>
   )
 }

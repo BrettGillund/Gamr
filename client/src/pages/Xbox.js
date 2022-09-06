@@ -20,6 +20,7 @@ function Games() {
   return (
     <div>
       <h1>Xbox Games</h1>
+      <div className="game-container">
       {xboxData.map((xbox, index) => {
         return (
           <div key={index} className="game-card">
@@ -28,6 +29,7 @@ function Games() {
           </div>
         );
       })}
+      </div>
     </div>
   );
 }

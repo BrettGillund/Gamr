@@ -12,6 +12,9 @@ function Sidebar() {
       <NavLink id="sBarMain" to="/profile">
         Profile
       </NavLink>
+      <NavLink id="sBarMain" to="/search">
+        Search
+      </NavLink>
       <NavLink id="sBarMain" to="/games">
         Games
       </NavLink>

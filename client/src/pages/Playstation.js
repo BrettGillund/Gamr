@@ -20,6 +20,8 @@ function Games() {
   return (
     <div>
       <h1>PlayStation Data</h1>
+      <div className="game-container">
+
       {playStationData.map((playstation, index) => {
         return (
           <div key={index} className="game-card">
@@ -28,6 +30,7 @@ function Games() {
           </div>
         );
       })}
+      </div>
     </div>
   );
 }
