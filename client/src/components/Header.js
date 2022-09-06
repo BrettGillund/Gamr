@@ -9,6 +9,7 @@ function Header(props) {
           <img id="logoPic" src={logo} alt="logo" />
           <span>Welcome, {props.user.email}
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/logout">Log Out</NavLink>
           </span>
         </nav>
       ) : (
