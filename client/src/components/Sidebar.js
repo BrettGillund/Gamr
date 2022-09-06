@@ -9,29 +9,54 @@ import nSwitchlogo from "../images/nintendo-switch.png";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <NavLink className="sBarMain" to="/">
+      <NavLink className="sBarMain divider" to="/">
         Home
       </NavLink>
-      <NavLink className="sBarMain" to="/profile">
+
+      <NavLink className="sBarMain divider" to="/profile">
         Profile
       </NavLink>
-      <NavLink className="sBarMain" to="/search">
+
+      <NavLink className="sBarMain divider" to="/search">
         Search
       </NavLink>
-      <h1 className="sBarMain platform">Platforms</h1>
-      <NavLink to="games/pc">
-        PC <img className="sidebarlogos" src={pclogo} />
-      </NavLink>
-      <NavLink to="games/playstation">
-        Playstation
-        <img className="sidebarlogos" src={playstationlogo} />{" "}
-      </NavLink>
-      <NavLink to="games/xbox">
-        Xbox <img className="sidebarlogos" src={xboxlogo} />
-      </NavLink>
-      <NavLink to="games/nintendo-switch">
-        Nintendo Switch <img className="sidebarlogos" src={nSwitchlogo} />
-      </NavLink>
+
+      <h1 className="sBarMain divider">Platforms</h1>
+
+      <div className="sBarPlatforms divider">
+        <NavLink to="games/pc">
+          PC 
+        </NavLink>
+        <img
+            className="sidebarlogos"
+            src={pclogo}
+            alt="pc logo"
+          />
+      </div>
+      <div className="sBarPlatforms divider">
+        <NavLink to="games/playstation">
+          Playstation
+        </NavLink>
+        <img
+            className="sidebarlogos"
+            src={playstationlogo}
+            alt="playstation logo"
+          />
+      </div>
+      <div className="sBarPlatforms divider">
+        <NavLink to="games/xbox">
+          Xbox 
+        </NavLink>
+        <img className="sidebarlogos" src={xboxlogo} alt="xbox logo" />
+      </div>
+      <div className="sBarPlatforms divider">
+        <NavLink to="games/nintendo-switch">Nintendo Switch</NavLink>
+        <img
+          className="sidebarlogos"
+          src={nSwitchlogo}
+          alt="nintendo switch logo"
+        />
+      </div>
     </div>
   );
 }

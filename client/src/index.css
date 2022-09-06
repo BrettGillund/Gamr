@@ -50,8 +50,8 @@ header nav a.active {
 
 .sBarMain {
   font-size: x-large;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
   width: 10vw;
+  text-align: center;
 }
 
 .sidebar {
@@ -112,7 +112,7 @@ header nav a.active {
   margin: auto;
 }
 .biggestText {
-  font-size: 3vh
+  font-size: 3vh;
 }
 .biggerText {
   font-size: x-large !important;
@@ -158,7 +158,6 @@ header nav a.active {
 .centerText {
   text-align: center;
   padding: 25px;
-  
 }
 .game-card {
   border: 1px solid black;
@@ -180,8 +179,7 @@ header nav a.active {
   background-color: rgb(40, 40, 40);
   font-size: x-large;
   width: fit-content;
-  block-size:fit-content;
-  
+  block-size: fit-content;
 }
 .game-search input {
   margin: 20px;
@@ -193,7 +191,7 @@ header nav a.active {
   font-size: large;
 }
 
-.results-container  {
+.results-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -218,20 +216,7 @@ header nav a.active {
   height: 300px;
 }
 
-.landingContainer1 {
-  margin: auto 50px;
-  padding: 25px;
-  background-color: rgb(40, 40, 40);
-  color: white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 2rem;
-  max-width: 30vw;
-  
-}
-.landingContainer2 {
+.landingContainer {
   margin: auto 50px;
   padding: 25px;
   background-color: rgb(40, 40, 40);
@@ -243,6 +228,7 @@ header nav a.active {
   border-radius: 2rem;
   max-width: 30vw;
 }
+
 .landingContainerSS {
   width: 40vw;
   border-radius: 2rem;
@@ -256,8 +242,8 @@ header nav a.active {
 }
 
 .tabStyling {
-width: 100vw;
-color: 40,40,40;
+  width: 100vw;
+  color: 40, 40, 40;
 }
 
 .tabStyling button.active {
@@ -271,12 +257,13 @@ color: 40,40,40;
   padding: 50px;
   border-radius: 2rem;
 }
+
 .landingPage {
-text-align: center;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-background-color: rgb(240, 240, 240);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
 }
 
 .searchContainer {
@@ -285,6 +272,28 @@ background-color: rgb(240, 240, 240);
 
 .sidebarlogos {
   width: 2.25vw;
-  display: inline;
-  vertical-align:baseline;
+  align-items: center;
+  padding-bottom:1rem;
+}
+
+.sBarPlatforms {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+
+.landingContainer {
+  margin: auto 50px;
+  padding: 25px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  max-width: 30vw;
 }

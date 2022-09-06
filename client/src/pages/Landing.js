@@ -41,7 +41,7 @@ function Landing(props) {
 
       <TabPanels>
         <TabPanel className="landingPage">
-          <div className="landingContainer1">
+          <div className="landingContainer">
             <h1 className="biggestText divider">
               Tired of adding all of your friend's usernames GAMR is here to
               help!
