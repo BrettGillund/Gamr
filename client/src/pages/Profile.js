@@ -22,31 +22,32 @@ import { PROFILE_QUERY } from "../utils/queries";
 // }
 
 function Profile() {
-    const { loading, error, data } = useQuery(PROFILE_QUERY)
-    let userInfo = JSON.parse(localStorage.getItem('user'))
+  const { loading, error, data } = useQuery(PROFILE_QUERY);
+  let userInfo = JSON.parse(localStorage.getItem("user"));
 
-    return (
-        <div>
-            {error && <p className="error">{error.message}</p>}
+  return (
+    <div>
+      {error && <p className="error">{error.message}</p>}
 
-            {loading && <p>Loading user profile...</p>}
+      {loading && <p>Loading user profile...</p>}
 
-            {data && (
-                <span>
-                    {data.getUsers.map((user, index) => {
-                        if(userInfo.email === user.email) {
-                            return <div key={index}>
-                            <h3>{user.gamerTag}</h3>
-                            <h3>{user.faveConsole}</h3>
-                            <h3>{user.library[0].game}</h3>
-                            </div>
-                        }
-})}
-                </span>
-            )}
-        </div>
-
-    )
+      {data && (
+        <span>
+          {data.getUsers.map((user, index) => {
+            if (userInfo.email === user.email) {
+              return (
+                <div key={index}>
+                  <h3>{user.gamerTag}</h3>
+                  <h3>{user.faveConsole}</h3>
+                  <h3>{user.library[0].game}</h3>
+                </div>
+              );
+            }
+          })}
+        </span>
+      )}
+    </div>
+  );
 }
 
 // function Profile(props) {

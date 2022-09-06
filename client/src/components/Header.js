@@ -14,8 +14,10 @@ function Header(props) {
       ) : (
         <nav id="navStyle">
           <img id="logoPic" src={logo} alt="logo" />
+          <div>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/auth-form">Register/Login</NavLink>
+          </div>
         </nav>
       )}
     </header>

@@ -18,7 +18,7 @@ function Sidebar() {
       <NavLink id="sBarMain" to="/games">
         Games
       </NavLink>
-      <h1 id="sBarMain">Platforms</h1>
+      <h1 id="sBarMain" className="platform">Platforms</h1>
       <NavLink to="games/pc">PC</NavLink>
       <NavLink to="games/playstation">Playstation</NavLink>
       <NavLink to="games/xbox">Xbox</NavLink>
