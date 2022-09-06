@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -7,14 +8,10 @@ const Results = (props) => {
     <div className="results-container">
       {props.gameResults.map((game) => (
         <div key={game.id} className="searchedGames">
-          <Link
-            to={{
-              pathname: `/game/${game.name}`,
-              gameProps: {
-                game: game,
-              },
-            }}
-          >
+               <Link
+                to= {`/game/${game.name}`}
+                state = {{game: game}}
+              >
             <h3>{game.name}</h3>
             <img src={game.background_image} alt="game" />
           </Link>
@@ -24,3 +21,4 @@ const Results = (props) => {
   );
 };
 export default Results;
+
