@@ -18,16 +18,24 @@ function Games() {
     width: "300px",
   };
   return (
+
     <div>
       <h1>PlayStation Data</h1>
+      <div className="game-container">
+
+
       {playStationData.map((playstation, index) => {
         return (
           <div key={index} className="game-card">
             <img style={divStyle} src={playstation.background_image}></img>
-            <p>{playstation.name} {playstation.rating}</p>
+            <p>{playstation.name}</p>
+            <p>
+              Rating: {playstation.rating} / {playstation.rating_top}
+            </p>
           </div>
         );
       })}
+      </div>
     </div>
   );
 }

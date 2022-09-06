@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 function Games() {
@@ -19,19 +18,24 @@ function Games() {
     width: "300px",
   };
   return (
+
     <div>
-      <h3>pc Data</h3>
-      {pcData.map((pc, index) => {
-        return (
-          <div key={index} className="game-card">
-            <img style={divStyle} src={pc.background_image}></img>
-            <p>{pc.name} {pc.rating}</p>
-          </div>
-        );
-      })}
+      <h1>PC Games</h1>
+      <div className="game-container">
+        {pcData.map((pc, index) => {
+          return (
+            <div key={index} className="game-card">
+              <a href="http://www.google.com" target="_blank">
+              <img style={divStyle} src={pc.background_image}/>
+              </a>
+              <p>{pc.name}</p>
+            </div>
+          );
+        })}
+      </div>
+
     </div>
   );
 }
 
 export default Games;
-

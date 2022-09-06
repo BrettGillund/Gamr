@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 
 function AuthForm(props) {
+
+  console.log(props)
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
@@ -33,6 +35,8 @@ function AuthForm(props) {
     localStorage.setItem('token', token);
     props.setUser(user);
     localStorage.setItem('user', JSON.stringify(user));
+    console.log(user)
+
     navigate('/');
   };
 
@@ -44,15 +48,16 @@ function AuthForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="profLogin">
       <h1>{formInput.type[0].toUpperCase() + formInput.type.slice(1)}</h1>
-      <input
+      <input className='border'
         name="email"
         value={formInput.email}
         onChange={handleInputChange}
         type="email"
         placeholder="Enter your email address" />
       <input
+      className='border'
         name="password"
         value={formInput.password}
         onChange={handleInputChange}
@@ -68,7 +73,7 @@ function AuthForm(props) {
           <input checked={formInput.type === 'register'} onChange={handleInputChange} name="type" id="register" type="radio" value="register" />
         </label>
       </div>
-      <button>Submit</button>
+      <button className='border'>Submit</button>
     </form>
   )
 }
