@@ -9,6 +9,7 @@ import Playstation from "./pages/Playstation"
 import Xbox from "./pages/Xbox"
 import Switch from "./pages/Switch"
 import Protect from './components/Protect';
+import Logout from './utils/logout'
 import { isAuthenticated } from './utils/auth';
 import AuthForm from './pages/AuthForm';
 import { useState, useEffect } from 'react';
@@ -40,6 +41,7 @@ function App() {
             </Protect>}>
           </Route>
 
+          <Route path="/logout" element={<Logout></Logout>}></Route>
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/games/pc" element={<Pc  setUser={setUser} />}></Route>
           <Route path="/games/playstation" element={<Playstation  setUser={setUser} />}></Route>
