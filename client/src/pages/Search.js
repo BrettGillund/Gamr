@@ -36,10 +36,7 @@ const onSubmit = (event) => {
                 <br></br>
                 <input type="submit"/>
             </form>
-            
             <Results gameResults = {gameResults}/>
-
-
         </div>
     );
 }

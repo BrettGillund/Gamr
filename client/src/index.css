@@ -25,14 +25,13 @@ code {
   border: 5px solid white;
 }
 
-#navStyle{
+#navStyle {
   display: flex;
   justify-content: space-between;
   padding: 7px 3%;
   background: rgb(40, 40, 40);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 2rem;
-  ;
 }
 
 header * {
@@ -51,6 +50,7 @@ header nav a.active {
 
 #sBarMain {
   font-size: x-large;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .sidebar {
@@ -132,7 +132,6 @@ header nav a.active {
   justify-content: center;
   border: 1px solid black;
   border-radius: 10px;
-  
   color: white;
   background-color: rgb(40, 40, 40);
   font-size: large;
@@ -140,7 +139,7 @@ header nav a.active {
 }
 
 .usernameStyle {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .game-container {
@@ -157,3 +156,53 @@ header nav a.active {
   text-align: center;
 }
 
+.game-search {
+  margin: auto;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: rgb(40, 40, 40);
+  font-size: x-large;
+  width: fit-content;
+  block-size:fit-content;
+}
+.game-search input {
+  margin: 20px;
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  border: 2px solid white;
+  background-color: rgb(40, 40, 40);
+  font-size: large;
+}
+
+.results-container  {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.searchedGames {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  margin: 25px;
+  border-radius: 10%;
+}
+
+.searchedGames a {
+  color: white;
+  text-decoration: none;
+}
+
+.searchedGames img {
+  width: 400px;
+  height: 300px;
+}
+
+.landingContainer {
+  
+}
