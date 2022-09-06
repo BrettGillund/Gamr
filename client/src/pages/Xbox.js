@@ -20,7 +20,7 @@ function Games() {
   return (
 
     <div>
-      <h1>Xbox Games</h1>
+      <h1 className="centerText">Xbox Games</h1>
       <div className="game-container">
 
       {xboxData.map((xbox, index) => {
