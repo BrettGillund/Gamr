@@ -1,5 +1,5 @@
-const {User, Library} = require('../models')
-const {mongoose} = require('mongoose')
+const { User, Library } = require('../models')
+const { mongoose } = require('mongoose')
 const { findByIdAndDelete } = require('../models/Library')
 const { signToken } = require('../auth');
 const { ApolloError } = require('apollo-server-express');
@@ -22,14 +22,14 @@ const resolvers = {
         async addUser(_, { email, password, gamerTag, faveConsole }, context) {
             try {
                 const user = await User.create({ email, password, gamerTag, faveConsole });
-        
+
                 const token = signToken(user);
                 return { user, token };
-        
-              } catch (err) {
+
+            } catch (err) {
                 throw new ApolloError(err);
-              }
-        },        
+            }
+        },
         async loginUser(_, { email, password }, context) {
             const user = await User.findOne({ email });
 
@@ -42,18 +42,18 @@ const resolvers = {
 
                 return { user, token };
             } catch (err) {
-              throw new ApolloError(err);
+                throw new ApolloError(err);
             }
         },
-        async addGame(_, {game, user: userId}) {
-          
-            const newGame = new Library( {game} )
+        async addGame(_, { game, user: userId }) {
+
+            const newGame = new Library({ game })
             const createdGame = await newGame.save();
             // var id = '631158f101382c2665f364d7'
             const user = await User.findById(userId);
             // this needs to be fixed 
 
-         
+
             console.log(userId)
             console.log(createdGame)
             console.log(game)
@@ -66,43 +66,24 @@ const resolvers = {
         },
 
 
-        async updateConsole (_, args) {
-            const faveConsole = await User.findByIdAndUpdate(args.id, args, {new: true})
+        async updateConsole(_, args) {
+            const faveConsole = await User.findByIdAndUpdate(args.id, args, { new: true })
             console.log(faveConsole)
             return faveConsole;
         },
 
-        // async updateConsole (_, {userId, faveConsole}) {
-        //     const filter = { userId }
-        //     const update = { faveConsole }
-        //     let user = await User.findOneAndUpdate(filter, update, {
-        //         new: true
-        //     });
-        //     await user.save()
-        //     console.log(user)
-        // },
-        // async updateGamertag (_, { user, gamerTag }) {
-        //     const filter = { user }
-        //     const update = { gamerTag }
-        //     let updatedUser = await User.findOneAndUpdate(filter, update, {
-        //         new: true
-        //     });
-        //     await updatedUser.save()
-        //     console.log(updatedUser)
-        // },
-
-            async updateGamertag (_, args) {
-            const gamerTag = await User.findByIdAndUpdate(args.id, args, {new: true})
+        async updateGamertag(_, args) {
+            const gamerTag = await User.findByIdAndUpdate(args.id, args, { new: true })
             console.log(gamerTag)
             return gamerTag;
         },
 
-        async deleteUser (_, { userId }) {
-            return await User.findByIdAndDelete({_id: userId})
+        async deleteUser(_, { userId }) {
+            return await User.findByIdAndDelete({ _id: userId })
             console.log("user deleted")
         },
-        async deleteGame (_, { gameId}) {
-            return await Library(findByIdAndDelete({_id: gameId}))
+        async deleteGame(_, { gameId }) {
+            return await Library(findByIdAndDelete({ _id: gameId }))
             console.log("game deleted")
         }
 
