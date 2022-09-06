@@ -32,7 +32,7 @@ function AuthForm(props) {
 
     localStorage.setItem('token', token);
     props.setUser(user);
-
+    localStorage.setItem('user', JSON.stringify(user));
     navigate('/');
   };
 

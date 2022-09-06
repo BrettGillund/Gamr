@@ -2,10 +2,31 @@ import { useQuery } from '@apollo/client';
 import { PROFILE_QUERY } from '../utils/queries';
 
 
-function Profile(props) {
-    const { loading, error, data } = useQuery(PROFILE_QUERY)
+// function Profile() {
+let userInfo = JSON.parse(localStorage.getItem('user'))
 
-    return(
+//     console.log(userInfo)
+
+//     return (
+//         <div className="game-container">
+//             <div>
+//                 <div className="game-card">
+//                     <p></p>
+//                     <p></p>
+//                     <p></p>
+//                 </div>
+//             </div>
+
+//         </div>
+
+//     )
+// }
+
+function Profile() {
+    const { loading, error, data } = useQuery(PROFILE_QUERY)
+    let userInfo = JSON.parse(localStorage.getItem('user'))
+
+    return (
         <div>
             {error && <p className="error">{error.message}</p>}
 
@@ -13,14 +34,20 @@ function Profile(props) {
 
             {data && (
                 <span>
-                    {data.getUsers.map(user => (
-                    <h3 key={user._id}>{user.gamerTag}</h3>
-                    ))}
+                    {data.getUsers.map((user, index) => {
+                        if(userInfo.email === user.email) {
+                            return <div key={index}>
+                            <h3>{user.gamerTag}</h3>
+                            <h3>{user.faveConsole}</h3>
+                            <h3>{user.library[0].game}</h3>
+                            </div>
+                        }
+})}
                 </span>
             )}
         </div>
 
-  )
+    )
 }
 
 // function Profile(props) {
