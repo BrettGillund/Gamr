@@ -64,24 +64,39 @@ const resolvers = {
             await user.save();
             return createdGame;
         },
-        async updateConsole (_, {userId, faveConsole}) {
-            const filter = { userId }
-            const update = { faveConsole }
-            let user = await User.findOneAndUpdate(filter, update, {
-                new: true
-            });
-            await user.save()
-            console.log(user)
+
+
+        async updateConsole (_, args) {
+            const faveConsole = await User.findByIdAndUpdate(args.id, args, {new: true})
+            console.log(faveConsole)
+            return faveConsole;
         },
-        async updateGamertag (_, { user: userId, gamerTag }) {
-            const filter = { userId }
-            const update = { gamerTag }
-            let user = await User.findOneAndUpdate(filter, update, {
-                new: true
-            });
-            await user.save()
-            console.log(user)
+
+        // async updateConsole (_, {userId, faveConsole}) {
+        //     const filter = { userId }
+        //     const update = { faveConsole }
+        //     let user = await User.findOneAndUpdate(filter, update, {
+        //         new: true
+        //     });
+        //     await user.save()
+        //     console.log(user)
+        // },
+        // async updateGamertag (_, { user, gamerTag }) {
+        //     const filter = { user }
+        //     const update = { gamerTag }
+        //     let updatedUser = await User.findOneAndUpdate(filter, update, {
+        //         new: true
+        //     });
+        //     await updatedUser.save()
+        //     console.log(updatedUser)
+        // },
+
+            async updateGamertag (_, args) {
+            const gamerTag = await User.findByIdAndUpdate(args.id, args, {new: true})
+            console.log(gamerTag)
+            return gamerTag;
         },
+
         async deleteUser (_, { userId }) {
             return await User.findByIdAndDelete({_id: userId})
             console.log("user deleted")
