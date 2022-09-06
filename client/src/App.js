@@ -15,7 +15,7 @@ import Switch from "./pages/Switch"
 
 
 import Search from "./pages/Search";
-import GameDetail from "./components/GameDetail"
+import GameDetail from './pages/GameDetail'
 
 import Protect from './components/Protect';
 
@@ -47,7 +47,7 @@ function App() {
           </Route>
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/search" element={<Search />}></Route>
-          <Route path="/game/:name" element={<GameDetail/>}></Route>
+          <Route path='/game/:name' element={<GameDetail/>}></Route>
           <Route path="/games/pc" element={<Pc  setUser={setUser} />}></Route>
           <Route path="/games/playstation" element={<Playstation  setUser={setUser} />}></Route>
           <Route path="/games/xbox" element={<Xbox  setUser={setUser} />}></Route>
