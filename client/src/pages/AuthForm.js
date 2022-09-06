@@ -47,15 +47,16 @@ function AuthForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="profLogin">
       <h1>{formInput.type[0].toUpperCase() + formInput.type.slice(1)}</h1>
-      <input
+      <input className='border'
         name="email"
         value={formInput.email}
         onChange={handleInputChange}
         type="email"
         placeholder="Enter your email address" />
       <input
+      className='border'
         name="password"
         value={formInput.password}
         onChange={handleInputChange}
@@ -71,7 +72,7 @@ function AuthForm(props) {
           <input checked={formInput.type === 'register'} onChange={handleInputChange} name="type" id="register" type="radio" value="register" />
         </label>
       </div>
-      <button>Submit</button>
+      <button className='border'>Submit</button>
     </form>
   )
 }

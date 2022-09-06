@@ -18,14 +18,19 @@ function Games() {
     width: "300px",
   };
   return (
+
     <div>
       <h1>Switch Games</h1>
       <div className="game-container">
+
       {switchData.map((nintendoSW, index) => {
         return (
           <div key={index} className="game-card">
             <img style={divStyle} src={nintendoSW.background_image}></img>
-            <p>{nintendoSW.name} {nintendoSW.rating}</p>
+            <p>{nintendoSW.name}</p>
+            <p>
+              Rating: {nintendoSW.rating} / {nintendoSW.rating_top}
+            </p>
           </div>
         );
       })}

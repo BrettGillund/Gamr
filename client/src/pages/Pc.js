@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 function Games() {
@@ -19,6 +18,7 @@ function Games() {
     width: "300px",
   };
   return (
+
     <div>
       <h1>PC Games</h1>
       <div className="game-container">
@@ -33,9 +33,9 @@ function Games() {
           );
         })}
       </div>
+
     </div>
   );
 }
 
 export default Games;
-
