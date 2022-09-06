@@ -143,17 +143,24 @@ header nav a.active {
 }
 
 .game-container {
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.centerText {
+  text-align: center;
+  padding: 25px;
+  
+}
 .game-card {
   border: 1px solid black;
-  margin: 10px 20px;
+  padding: 20px;
+  margin: 30px;
   color: white;
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(50, 50, 50);
   text-align: center;
+  border-radius: 10%;
 }
 
 .game-search {
@@ -204,5 +211,5 @@ header nav a.active {
 }
 
 .landingContainer {
-  
+
 }

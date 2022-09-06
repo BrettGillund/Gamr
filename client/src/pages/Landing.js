@@ -17,14 +17,14 @@ function Landing(props) {
     width: "400px",
   };
   return (
-    <div className="landingContainer">
+    <div className="centerText">
       <h1>
         Welcome {props.user ? props.user.email : "Guest"}! Please Register for
         an account!
       </h1>
       <div>
         <h1>Top games of the year</h1>
-        <div className="game-container">
+        <div className="game-container ">
           {gameData.map((game, index) => {
             return (
               <div key={index}>
