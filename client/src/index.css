@@ -25,13 +25,14 @@ code {
   border: 5px solid white;
 }
 
-header {
+#navStyle{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 7px 3%;
   background: rgb(40, 40, 40);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
+  ;
 }
 
 header * {
@@ -59,6 +60,7 @@ header nav a.active {
   height: 100vh;
   display: inline-block;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
 }
 
 .sidebar a {
@@ -66,10 +68,12 @@ header nav a.active {
   padding: 25px 10px;
   font-size: 1.5rem;
   text-decoration: none;
+  color: white;
 }
 
 .sidebar a.active {
   text-decoration: underline;
+  color: white;
 }
 
 .main {
@@ -103,11 +107,46 @@ header nav a.active {
   background-color: rgb(40, 40, 40);
   font-size: large;
 }
+.profile {
+  margin: auto;
+}
+
+.profContainer {
+  display: flex;
+  padding: 25px 15px;
+  height: 50%;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: rgb(40, 40, 40);
+  font-size: large;
+  align-items: center;
+}
+
+.savedGames {
+  display: flex;
+  padding: 25px 15px;
+  height: 50%;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  
+  color: white;
+  background-color: rgb(40, 40, 40);
+  font-size: large;
+  align-items: center;
+}
+
+.usernameStyle {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+}
 
 .game-container {
   display: flex;
   flex-wrap: wrap;
-  
+  justify-content: center;
 }
 
 .game-card {
