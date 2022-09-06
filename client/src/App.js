@@ -12,8 +12,10 @@ import Pc from "./pages/Pc"
 import Playstation from "./pages/Playstation"
 import Xbox from "./pages/Xbox"
 import Switch from "./pages/Switch"
-import Search from "./pages/Search";
 
+
+import Search from "./pages/Search";
+import GameDetail from "./components/GameDetail"
 
 import Protect from './components/Protect';
 
@@ -44,8 +46,8 @@ function App() {
             </Protect>}>
           </Route>
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
-          <Route path="/search" component={<GameDetail />}></Route>
-          <Route path="/game/:name" element={<Search/>}></Route>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/game/:name" element={<GameDetail/>}></Route>
           <Route path="/games/pc" element={<Pc  setUser={setUser} />}></Route>
           <Route path="/games/playstation" element={<Playstation  setUser={setUser} />}></Route>
           <Route path="/games/xbox" element={<Xbox  setUser={setUser} />}></Route>

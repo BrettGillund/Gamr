@@ -1,9 +1,10 @@
 const axios = require('axios');
 const api_router = require('express').Router();
+
 // console.log(process.env.API_KEY)
 
-api_router.get('/api/games', (req, res) => {
-    axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}&dates=2021-10-10,2022-10-10&ordering=-added`).then((data) => {
+api_router.get('/api/search', (req, res) => {
+    axios.get(`http://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${searchedGame}`).then((data) => {
         // console.log(data.data)
         res.json(data.data);
     });
@@ -15,6 +16,7 @@ api_router.get('/api/games', (req, res) => {
         res.json(data.data);
     });
 });
+
 api_router.get('/api/pc', (req, res) => {
     axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}&dates=2017-10-10,2022-10-10&ordering=-added&platforms=4`).then((data) => {
         // console.log(data.data)
