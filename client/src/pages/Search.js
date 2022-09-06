@@ -18,7 +18,7 @@ const onSubmit = (event) => {
 
     setGameResults( [] )
     console.log("about to fetch ")
-    fetch(`http://api.rawg.io/api/games?key=d31a399eba4e4877b85fe959ca635232&search=${searchedGame}`)
+    fetch(`https://api.rawg.io/api/games?key=d31a399eba4e4877b85fe959ca635232&search=${searchedGame}`)
     .then(res => res.json())
     .then(({results}) => {
        var error = results === undefined ? alert('no games found') : setGameResults(results)
