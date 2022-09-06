@@ -64,7 +64,7 @@ const resolvers = {
             await user.save();
             return createdGame;
         },
-        async updateConsole (_, { userId, faveConsole }) {
+        async updateConsole (_, {userId, faveConsole}) {
             const filter = { userId }
             const update = { faveConsole }
             let user = await User.findOneAndUpdate(filter, update, {
@@ -73,7 +73,7 @@ const resolvers = {
             await user.save()
             console.log(user)
         },
-        async updateGamertag (_, { userId, gamerTag }) {
+        async updateGamertag (_, { user: userId, gamerTag }) {
             const filter = { userId }
             const update = { gamerTag }
             let user = await User.findOneAndUpdate(filter, update, {

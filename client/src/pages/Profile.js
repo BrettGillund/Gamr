@@ -3,7 +3,7 @@ import { PROFILE_QUERY } from '../utils/queries';
 
 
 // function Profile() {
-let userInfo = JSON.parse(localStorage.getItem('user'))
+// let userInfo = JSON.parse(localStorage.getItem('user'))
 
 //     console.log(userInfo)
 
