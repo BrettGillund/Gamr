@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom"
 function Games() {
   const [pcData, setPcData] = useState([]);
 
@@ -14,20 +14,22 @@ function Games() {
 
   useEffect(grabData, []);
   const divStyle = {
-    height: "200px",
-    width: "300px",
+    height: "250px",
+    width: "400px",
   };
   return (
 
     <div>
-      <h1 className="centerText">PC Games</h1>
+      <h1 className="centerText biggestText">PC Games</h1>
       <div className="game-container">
         {pcData.map((pc, index) => {
           return (
             <div key={index} className="game-card">
-              <a href="http://www.google.com" target="_blank">
+              <Link 
+              to={`/game/${pc.name}`}
+              state = {{game: pc}}>
               <img style={divStyle} src={pc.background_image}/>
-              </a>
+              </Link>
               <p>{pc.name}</p>
             </div>
           );

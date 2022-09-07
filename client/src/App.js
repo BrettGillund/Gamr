@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Logout from './utils/logout'
 
 import Profile from "./pages/Profile"
 import Sidebar from "./components/Sidebar";
@@ -45,6 +46,8 @@ function App() {
               <Profile  setUser={setUser} ></Profile>
             </Protect>}>
           </Route>
+
+          <Route path="/logout" element={<Logout></Logout>}></Route>
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path='/game/:name' element={<GameDetail/>}></Route>

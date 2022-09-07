@@ -5,7 +5,7 @@ import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 
 function AuthForm(props) {
 
-  console.log(props)
+  // console.log(props)
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
@@ -49,7 +49,7 @@ function AuthForm(props) {
 
   return (
     <form onSubmit={handleSubmit} className="profLogin">
-      <h1>{formInput.type[0].toUpperCase() + formInput.type.slice(1)}</h1>
+      <h1 className='biggestText'>{formInput.type[0].toUpperCase() + formInput.type.slice(1)}</h1>
       <input className='border'
         name="email"
         value={formInput.email}
