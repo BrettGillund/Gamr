@@ -7,12 +7,16 @@
   "description": "Project 3 Group 1",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "dev:server": "cd ./server && nodemon server.js",
     "dev:client": "cd ./client && npm start",
-    "build": "concurrently \"cd ./client && npm run build\" \"cd ./server && npm install\"",
+    "build": "cd ./client && npm run build",
     "start": "cd ./server && node server.js",
-    "dev": "concurrently \"npm run dev:server\"  \"npm run dev:client\""
+    "dev": "concurrently \"npm run dev:server\"  \"npm run dev:client\"",
+    "install": "cd ./server && npm i && cd ../client && npm i"
   },
   "repository": {
     "type": "git",
