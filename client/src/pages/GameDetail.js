@@ -5,6 +5,7 @@ const GameDetail = () => {
   } = useLocation();
 
   return (
+    
     <div className="searchedGame">
       <div className="searchGameName biggestText divider">
         <h1>{game.name}</h1>
@@ -13,7 +14,7 @@ const GameDetail = () => {
         <div className="searchGameInfo">
           <h1 className="divider">Game Information</h1>
           <p>Release Date: {game.released}</p>
-          <p>Game Rating: {game.rating}</p>
+          <p>Metacritic Rating: {game.metacritic}</p>
           <p>Genre(s): {game.genres.map((games) => `${games.name}`)}</p>
           <p>
             Platforms(s) {game.platforms.map((p) => `${p.platform.name} | `)}
