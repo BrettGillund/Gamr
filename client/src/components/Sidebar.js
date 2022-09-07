@@ -17,6 +17,10 @@ function Sidebar() {
         Profile
       </NavLink>
 
+      <NavLink className="sBarMain divider" to="/users">
+        Users
+      </NavLink>
+
       <NavLink className="sBarMain divider" to="/search">
         Search
       </NavLink>
