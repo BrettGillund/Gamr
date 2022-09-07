@@ -5,7 +5,7 @@ import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 
 function AuthForm(props) {
 
-  console.log(props)
+  // console.log(props)
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
