@@ -14,8 +14,8 @@ function Games() {
 
   useEffect(grabData, []);
   const divStyle = {
-    height: "200px",
-    width: "300px",
+    height: "250px",
+    width: "400px",
   };
   return (
     <div>
