@@ -7,9 +7,6 @@
   "description": "Project 3 Group 1",
   "version": "1.0.0",
   "main": "index.js",
-  "engines": {
-    "node": ">=12"
-  },
   "scripts": {
     "dev:server": "cd ./server && nodemon server.js",
     "dev:client": "cd ./client && npm start",

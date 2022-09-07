@@ -49,6 +49,7 @@ function App() {
           </Route>
           <Route path="/users" element={<Users></Users>}></Route>
           <Route path="/logout" element={<Logout></Logout>}></Route>
+
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path='/game/:name' element={<GameDetail/>}></Route>
