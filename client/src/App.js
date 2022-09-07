@@ -13,6 +13,7 @@ import Pc from "./pages/Pc"
 import Playstation from "./pages/Playstation"
 import Xbox from "./pages/Xbox"
 import Switch from "./pages/Switch"
+import Users from "./pages/Users"
 
 
 import Search from "./pages/Search";
@@ -46,7 +47,7 @@ function App() {
               <Profile  setUser={setUser} ></Profile>
             </Protect>}>
           </Route>
-
+          <Route path="/users" element={<Users></Users>}></Route>
           <Route path="/logout" element={<Logout></Logout>}></Route>
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/search" element={<Search />}></Route>

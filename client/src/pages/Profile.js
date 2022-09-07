@@ -24,9 +24,9 @@ function Profile() {
                 return (
                   <div key={index}>
                     <div>
-                      <h3>GamerTag: {user.gamerTag}</h3>
-                      <h3>Preferred Console: {user.faveConsole}</h3>
-                      <div className="gameList">
+                      <h3 className="whiteText biggerText">GamerTag: {user.gamerTag}</h3>
+                      <h3 className="whiteText biggerText">Preferred Console: {user.faveConsole}</h3>
+                      <div className="gameList whiteText biggerText"> Favorite Games: 
                         {user.library.map((game, index) => {
                           return (
                             <div key={index} className="profileContainer">
