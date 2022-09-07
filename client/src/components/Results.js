@@ -13,7 +13,7 @@ const Results = (props) => {
                 state = {{game: game}}
               >
             <h3>{game.name}</h3>
-            <img src={game.background_image} alt="game" />
+            <img src={game.background_image} alt="game" className="gameScreenshots"/>
           </Link>
         </div>
       ))}

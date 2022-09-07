@@ -33,7 +33,7 @@ async function startServer(typeDefs, resolvers) {
 
     db.once('open', () => {
         app.listen(PORT, () => {
-            console.log('app sarted on port %s',  PORT);
+            console.log('app started on port %s',  PORT);
             console.log('GraphQl is ready on %s', server.graphqlPath)
         })
     })

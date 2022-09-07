@@ -15,7 +15,7 @@ function Header(props) {
       ) : (
         <nav id="navStyle">
           <img id="logoPic" src={logo} alt="logo" />
-          <div>
+          <div className="centerText">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/auth-form">Register/Login</NavLink>
           </div>

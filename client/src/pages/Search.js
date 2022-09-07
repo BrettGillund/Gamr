@@ -30,7 +30,7 @@ const onSubmit = (event) => {
 
     return (
         <div className='game-search'>
-            <h1>Game Search</h1>
+            <h1 className='biggestText'>Game Search</h1>
             <form onSubmit={onSubmit}>
             <input type="text" value={search} onChange={handleChange}/>
                 <br></br>
