@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import gameScreenshot from "../images/gameSS.png";
 import { Link } from "react-router-dom";
-
+import Footer from "../components/Footer"
 function Landing(props) {
   const [gameData, setGameData] = useState([]);
   const [upcomingGameData, setUpcomingGameData] = useState([]);
@@ -67,6 +67,7 @@ function Landing(props) {
               friends all-in-one place
             </h1>
           </div>
+          
         </TabPanel>
         <TabPanel>
           <div className="centerText ">
@@ -88,6 +89,7 @@ function Landing(props) {
               </div>
             </div>
           </div>
+         
         </TabPanel>
         <TabPanel>
           <div className="centerText ">
@@ -111,6 +113,7 @@ function Landing(props) {
           </div>
         </TabPanel>
       </TabPanels>
+      <Footer />
     </Tabs>
   );
 }

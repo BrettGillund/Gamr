@@ -3,7 +3,7 @@ import Logout from './utils/logout'
 
 import Profile from "./pages/Profile"
 import Sidebar from "./components/Sidebar";
-
+import Footer from "./components/Footer"
 import Landing from "./pages/Landing";
 import { Routes, Route } from "react-router-dom";
 
@@ -37,6 +37,7 @@ function App() {
       <Header user={user}/>
       <div className="main">
         <Sidebar />
+        
         <Routes>
           <Route path="/" element={<Landing user={user}></Landing>}></Route>
           <Route path="/auth-form" element={<AuthForm setUser={setUser}></AuthForm>}></Route>
@@ -56,6 +57,7 @@ function App() {
           <Route path="/games/xbox" element={<Xbox  setUser={setUser} />}></Route>
           <Route path="/games/nintendo-switch" element={<Switch  setUser={setUser} />}></Route>
         </Routes>
+        
       </div>
     </div>
   );
