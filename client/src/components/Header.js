@@ -7,7 +7,7 @@ function Header(props) {
       {props.user ? (
         <nav id="navStyle">
           <img id="logoPic" src={logo} alt="logo" />
-          <span>Welcome, {props.user.email}
+          <span className="centerText">Welcome, {props.user.email}
           <NavLink to="/">Home</NavLink>
           <NavLink to="/logout">Log Out</NavLink>
           </span>
