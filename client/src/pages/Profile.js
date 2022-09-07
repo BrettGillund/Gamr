@@ -1,57 +1,39 @@
 import { useQuery } from "@apollo/client";
 import { PROFILE_QUERY } from "../utils/queries";
 
-// function Profile() {
-// let userInfo = JSON.parse(localStorage.getItem('user'))
-
-//     console.log(userInfo)
-
-//     return (
-//         <div className="game-container">
-//             <div>
-//                 <div className="game-card">
-//                     <p></p>
-//                     <p></p>
-//                     <p></p>
-//                 </div>
-//             </div>
-
-//         </div>
-
-//     )
-// }
 
 function Profile() {
   const { loading, error, data } = useQuery(PROFILE_QUERY);
   let userInfo = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <div>
+    <div className="centerProf">
       {error && <p className="error">{error.message}</p>}
 
       {loading && <p>Loading user profile...</p>}
 
       {data && (
-        <form className="profContainer profile">
+        <div className="profContainer">
+        <form >
           {data.getUsers.map((user, index) => {
             if(user.gamerTag !== null) {
               var tag = `Gamer Tag: ${user.gamerTag}`
             } else {
               var tag = (
-              <input placeholder ="Please enter your gamer tag!"></input>)
-              var submit1 = (<button>ENTER</button>)
+              <input className="profInput" placeholder ="Enter your username/gamertag!"></input>)
+              var submit1 = (<button className="biggerText btnStyle">ENTER</button>)
             }
             if(user.faveConsole !== null) {
               var console = `Prefered Console: ${user.faveConsole}`
               var submit = ''
             } else {
               var console = (
-              <input placeholder ="Please enter your prefered console!"></input>)
-              var submit = (<button>ENTER</button>)
+              <input className="profInput" placeholder ="Enter your prefered console/platform!"></input>)
+              var submit = (<button className="biggerText btnStyle">ENTER</button>)
             }
             if (userInfo.email === user.email) {
               return (
-                <div key={index} className="profile">
+                <div key={index} className="profileContainer">
                   <h3>{tag} {submit1}</h3>
                   <h3>{console} {submit}</h3>
                   {/* <h3>Fav Game: {user.library[0].game}</h3> */}
@@ -60,6 +42,7 @@ function Profile() {
             }
           })}
         </form>
+        </div>
       )}
     </div>
   );
