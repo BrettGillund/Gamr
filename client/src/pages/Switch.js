@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 function Games() {
   const [switchData, setSwitchData] = useState([]);
 
@@ -18,22 +18,22 @@ function Games() {
     width: "300px",
   };
   return (
-
     <div>
       <h1 className="centerText biggestText">Switch Games</h1>
       <div className="game-container">
-
-      {switchData.map((nintendoSW, index) => {
-        return (
-          <div key={index} className="game-card">
-            <img style={divStyle} src={nintendoSW.background_image}></img>
-            <p>{nintendoSW.name}</p>
-            <p>
-              Rating: {nintendoSW.rating} / {nintendoSW.rating_top}
-            </p>
-          </div>
-        );
-      })}
+        {switchData.map((nintendoSW, index) => {
+          return (
+            <div key={index} className="game-card">
+              <Link
+                to={`/game/${nintendoSW.name}`}
+                state={{ game: nintendoSW }}
+              >
+                <img style={divStyle} src={nintendoSW.background_image}></img>
+              </Link>
+              <p>{nintendoSW.name}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

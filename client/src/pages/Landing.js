@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import gameScreenshot from "../images/gameSS.png";
+import {Link} from "react-router-dom"
 
 function Landing(props) {
   const [gameData, setGameData] = useState([]);
@@ -70,16 +71,19 @@ function Landing(props) {
         <TabPanel>
           <div className="centerText ">
             <div>
+            <h1 className="biggestText">2022 Games of the Year</h1>
               <div className="game-container ">
                 {gameData.map((game, index) => {
                   return (
                     <div key={index}>
                       <div className="game-card">
+                        <Link
+                          to={`/game/${game.name}`}
+                          state={{ game: game }}
+                        >
                         <img style={divStyle} src={game.background_image} />
+                        </Link>
                         <p>{game.name}</p>
-                        <p>
-                          Rating: {game.rating} / {game.rating_top}
-                        </p>
                       </div>
                     </div>
                   );
@@ -97,11 +101,13 @@ function Landing(props) {
                   return (
                     <div key={index}>
                       <div className="game-card">
+                      <Link
+                          to={`/game/${game.name}`}
+                          state={{ game: game }}
+                        >
                         <img style={divStyle} src={game.background_image} />
+                        </Link>
                         <p>{game.name}</p>
-                        <p>
-                          Rating: {game.rating} / {game.rating_top}
-                        </p>
                       </div>
                     </div>
                   );

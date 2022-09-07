@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Games() {
   const [xboxData, setXboxData] = useState([]);
@@ -26,11 +27,12 @@ function Games() {
       {xboxData.map((xbox, index) => {
         return (
           <div key={index} className="game-card">
+            <Link
+            to={`/game/${xbox.name}`}
+            state = {{game: xbox}}>
             <img style={divStyle} src={xbox.background_image}></img>
+            </Link>
             <p>{xbox.name}</p>
-            <p>
-                Rating: {xbox.rating} / {xbox.rating_top}
-              </p>
           </div>
         );
       })}

@@ -25,8 +25,11 @@ function Games() {
         {pcData.map((pc, index) => {
           return (
             <div key={index} className="game-card">
-              
+              <Link 
+              to={`/game/${pc.name}`}
+              state = {{game: pc}}>
               <img style={divStyle} src={pc.background_image}/>
+              </Link>
               <p>{pc.name}</p>
             </div>
           );

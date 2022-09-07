@@ -21,7 +21,7 @@ code {
 }
 
 #logoPic {
-  border-radius: 10%;
+  border-radius: 1rem;
   border: 5px solid white;
 }
 
@@ -87,7 +87,7 @@ header nav a.active {
   height: 50%;
   justify-content: center;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
   color: white;
   background-color: rgb(40, 40, 40);
@@ -102,7 +102,7 @@ header nav a.active {
 .profLogin .border {
   margin: 20px;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 1rem;
   color: white;
   border: 2px solid white;
   background-color: rgb(40, 40, 40);
@@ -124,7 +124,7 @@ header nav a.active {
   height: 50%;
   justify-content: center;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
   color: white;
   background-color: rgb(40, 40, 40);
@@ -138,7 +138,7 @@ header nav a.active {
   height: 50%;
   justify-content: center;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 1rem;
   color: white;
   background-color: rgb(40, 40, 40);
   font-size: large;
@@ -161,19 +161,24 @@ header nav a.active {
 }
 .game-card {
   border: 1px solid black;
-  padding: 20px;
+  padding-bottom: 20px;
   margin: 30px;
   color: white;
   background-color: rgb(50, 50, 50);
   text-align: center;
-  border-radius: 10%;
+  border-radius: 1rem;
+}
+
+.game-card img{
+  border-radius:1rem;
+
 }
 
 .game-search {
   margin: auto;
   padding: 50px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
   color: white;
   background-color: rgb(40, 40, 40);
@@ -184,7 +189,7 @@ header nav a.active {
 .game-search input {
   margin: 20px;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 1rem;
   color: white;
   border: 2px solid white;
   background-color: rgb(40, 40, 40);
@@ -203,7 +208,7 @@ header nav a.active {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 50px;
   margin: 25px;
-  border-radius: 10%;
+  border-radius: 2.5rem;
 }
 
 .searchedGames a {
@@ -319,7 +324,7 @@ header nav a.active {
 .gameScreenshots  {
   display: flex;
   flex-wrap: wrap;
-  
+  border-radius: 1rem;
 }
 .gameScreenshots img {
   display: flex;
