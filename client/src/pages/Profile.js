@@ -1,63 +1,64 @@
 import { useQuery } from "@apollo/client";
 import { PROFILE_QUERY } from "../utils/queries";
 
+import GameForm from "../components/GameForm";
+
 
 function Profile() {
   const { loading, error, data } = useQuery(PROFILE_QUERY);
   let userInfo = JSON.parse(localStorage.getItem("user"));
+  console.log(data);
+
+
 
   return (
-    <div className="centerProf">
-      {error && <p className="error">{error.message}</p>}
+    <div className="profile-main">
+      <div>
+        {error && <p className="error">{error.message}</p>}
 
-      {loading && <p>Loading user profile...</p>}
+        {loading && <p>Loading user profile...</p>}
 
-      {data && (
-        <div className="profContainer">
-        <form >
-          {data.getUsers.map((user, index) => {
-            if(user.gamerTag !== null) {
-              var tag = `Gamer Tag: ${user.gamerTag}`
-            } else {
-              var tag = (
-              <input className="profInput" placeholder ="Enter your username/gamertag!"></input>)
-              var submit1 = (<button className="biggerText btnStyle">ENTER</button>)
-            }
-            if(user.faveConsole !== null) {
-              var console = `Prefered Console: ${user.faveConsole}`
-              var submit = ''
-            } else {
-              var console = (
-              <input className="profInput" placeholder ="Enter your prefered console/platform!"></input>)
-              var submit = (<button className="biggerText btnStyle">ENTER</button>)
-            }
-            if (userInfo.email === user.email) {
-              return (
-                <div key={index} className="profileContainer">
-                  <h3>{tag} {submit1}</h3>
-                  <h3>{console} {submit}</h3>
-                  {/* <h3>Fav Game: {user.library[0].game}</h3> */}
-                </div>
-              );
-            }
-          })}
-        </form>
-        </div>
-      )}
-    </div>
+        {data && (
+          <span>
+            {data.getUsers.map((user, index) => {
+              if (userInfo.email === user.email) {
+              let userLib = user.library
+              console.log(userLib)
+                return (
+                  
+                  <div key={index}>
+                    <div>
+                      <h3>{user.gamerTag}</h3>
+                      <h3>{user.faveConsole}</h3>
+                    <div className="gameList">
+
+                      {user.library.map((game, index) => {
+                        return (
+                          <div  key={index}>
+                            <h1>
+                               {game.game}
+                            </h1>
+
+                          </div>
+                        )
+                      })}
+                    </div>
+                    
+                    </div>
+
+                    <GameForm {...user}/>
+                  </div>
+                );
+              }
+            })}
+          </span>
+        )}
+      </div>
+      <div>
+      </div>
+  </div>
   );
 }
-
-// function Profile(props) {
-//     const { user } = this.props;
-//     return(
-//         <div>
-//             <h1>{user.email}</h1>
-//             {/* <h3>{props.user.faveConsole}</h3> */}
-//         </div>
-//     )
-// }
-
 export default Profile;
 
 

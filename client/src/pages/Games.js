@@ -27,9 +27,7 @@ function Games() {
               <div className="game-card">
                 <img style={divStyle} src={game.background_image}></img>
                 <p>{game.name}</p>
-                <p>
-                  Rating: {game.rating} / {game.rating_top}
-                </p>
+              
               </div>
             </div>
           );

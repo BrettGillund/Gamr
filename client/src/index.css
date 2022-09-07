@@ -358,6 +358,20 @@ header nav a.active {
   border-radius: 1rem;
 }
 
+
+.profile-main {
+  width: 100rem;
+  text-align: center;
+}
+.add-game-form {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  margin: 25px;
+  border-radius: 10%;
+}
+
+  
 @media (max-width: 500px) {
   .sBarMain {
     font-size: small;
