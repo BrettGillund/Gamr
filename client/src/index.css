@@ -358,6 +358,27 @@ header nav a.active {
   border-radius: 1rem;
 }
 
+.pageFooter {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+}
+.footerStyle {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.footerStyle a {
+  padding: .25rem;
+}
 .whiteText {
   color: white;
 }
