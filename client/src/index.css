@@ -266,14 +266,10 @@ header nav a.active {
   background-color: rgb(240, 240, 240);
 }
 
-.searchContainer {
-
-}
-
 .sidebarlogos {
   width: 2.25vw;
   align-items: center;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
 }
 
 .sBarPlatforms {
@@ -283,7 +279,6 @@ header nav a.active {
   /* justify-content: center; */
   flex-direction: column;
 }
-
 
 .landingContainer {
   margin: auto 50px;
@@ -297,3 +292,41 @@ header nav a.active {
   border-radius: 2rem;
   max-width: 30vw;
 }
+
+.searchedGame {
+  width:100vw;
+  background-color: 240,240,240;
+}
+.searchGameName {
+  background-color: rgb(40, 40, 40);
+  border-radius: 1rem;
+  text-align: center;
+  margin: 50px auto;
+  padding: 1rem;
+  color: white;
+  width: max-content;
+  
+}
+.searchGameInfo {
+  font-size: x-large;
+  margin: auto;
+  background-color: rgb(40, 40, 40);
+  border-radius: 1rem;
+  color: white;
+  padding: 4rem;
+  width: fit-content;
+}
+.gameScreenshots  {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.gameScreenshots img {
+  display: flex;
+  flex-direction: row;
+  width: 21vw;
+  background-color: rgb(40, 40, 40);
+  margin: 1rem ;
+  border-radius: 1rem;
+}
+

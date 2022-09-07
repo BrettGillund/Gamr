@@ -1,23 +1,29 @@
 import { useLocation } from "react-router-dom";
 const GameDetail = () => {
   let {
-    state: { game, index },
+    state: { game },
   } = useLocation();
 
   return (
-    <div className="searchContainer">
-      <h1>{game.name}</h1>
-      <p>Released: {game.released}</p>
-      <p>Rating: {game.rating}</p>
-      <h3>Genre(s):</h3>
-      {game.genres.map((games ) => `${games.name}`)}
-      <h3>Platforms(s)</h3>
-      {game.platforms.map((p ) => `${p.platform.name} | `)}
+    <div className="searchedGame">
+      <div className="searchGameName biggestText divider">
+        <h1>{game.name}</h1>
+      </div>
       <div>
+        <div className="searchGameInfo">
+          <h1 className="divider">Game Information</h1>
+          <p>Release Date: {game.released}</p>
+          <p>Game Rating: {game.rating}</p>
+          <p>Genre(s): {game.genres.map((games) => `${games.name}`)}</p>
+          <p>
+            Platforms(s) {game.platforms.map((p) => `${p.platform.name} | `)}
+          </p>
+        </div>
+      </div>
+
+      <div className="gameScreenshots">
         {game.short_screenshots.map((ss) => (
-          <div>
-            <img src={ss.image} alt="screenshot"></img>
-          </div>
+          <img src={ss.image} alt="screenshot" />
         ))}
       </div>
     </div>

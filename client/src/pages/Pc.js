@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom"
 function Games() {
   const [pcData, setPcData] = useState([]);
 
@@ -25,9 +25,8 @@ function Games() {
         {pcData.map((pc, index) => {
           return (
             <div key={index} className="game-card">
-              <a href="http://www.google.com" target="_blank">
+              
               <img style={divStyle} src={pc.background_image}/>
-              </a>
               <p>{pc.name}</p>
             </div>
           );
