@@ -9,14 +9,6 @@ function Profile() {
   let userInfo = JSON.parse(localStorage.getItem("user"));
   console.log(data);
 
-<<<<<<< HEAD
-  // console.log(data)
-  console.log(PROFILE_QUERY)
-  // console.log(userInfo)
-
-
-
-=======
   return (
     <div className="centerProf">
       <div>
@@ -57,11 +49,6 @@ function Profile() {
       <div></div>
     </div>
   );
->>>>>>> b315df718c70f5012358b98fe9ce009138684886
 }
 export default Profile;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b315df718c70f5012358b98fe9ce009138684886
