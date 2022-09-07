@@ -26,14 +26,14 @@ function GameForm(props) {
     };
 
   return (
-    <form className="add-game-form" onSubmit={handleSubmit}>
-        <h1>Add Game to your Library</h1>
-      <input
+    <form className="" onSubmit={handleSubmit}>
+        <h1 className="whiteText biggestText">Add Game to your Library</h1>
+      <input className="profInput"
         value={formInput}
         onChange={(e) => setFormInput(e.target.value)}
         type="text"
         placeholder="Add game to your library"/>
-        <button>Submit</button>
+        <button className="biggerText btnStyle">Submit</button>
     </form>
   );
 }
