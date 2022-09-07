@@ -4,8 +4,7 @@ import { PROFILE_QUERY } from "../utils/queries";
 import GameForm from "../components/GameForm";
 
 function Profile() {
-  const { getUsers } = useQuery(PROFILE_QUERY);
-  // const { getUsers, email, gamerTag } = useQuery(PROFILE_QUERY);
+  const { loading, error, data } = useQuery(PROFILE_QUERY);
   let userInfo = JSON.parse(localStorage.getItem("user"));
   console.log(data);
 
