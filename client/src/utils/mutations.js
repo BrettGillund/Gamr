@@ -21,3 +21,12 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_GAME = gql`
+mutation addGame($user: ID, $game: String!) {
+  addGame(user: $user game: $game) {
+    _id
+    game
+  }
+}
+`

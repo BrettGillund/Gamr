@@ -3,7 +3,7 @@ import Results from '../components/Results'
 
 
 
-const Search = () => {
+const Search = (props) => {
     const [search, setSearch] = useState("")
     const [gameResults, setGameResults] = useState([])
 
