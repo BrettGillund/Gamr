@@ -358,6 +358,10 @@ header nav a.active {
   border-radius: 1rem;
 }
 
+.whiteText {
+  color: white;
+}
+
 @media (max-width: 500px) {
   .sBarMain {
     font-size: small;
