@@ -6,8 +6,8 @@ import { PROFILE_QUERY } from "../utils/queries";
 
 
 function GameForm(props) {
-    console.log("game form is hittin");
-    console.log(props);
+    // console.log("game form is hittin");
+    // console.log(props);
     const [formInput, setFormInput] = useState("");
     const [addGame, {loading, error, data}] = useMutation(ADD_GAME)
     const navigate = useNavigate();

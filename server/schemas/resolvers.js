@@ -79,13 +79,15 @@ const resolvers = {
         },
 
         async deleteUser(_, { userId }) {
-            return await User.findByIdAndDelete({ _id: userId })
-            console.log("user deleted")
+           const deletedUser =  await User.findByIdAndDelete({ _id: userId })
+            console.log(deletedUser)
+            return deleteUser;
+           
+           console.log("user deleted")
         },
-        async deleteGame(_, { gameId }) {
-            return await Library(findByIdAndDelete({ _id: gameId }))
-            console.log("game deleted")
-        }
+        removeGame: async (parent, { gameId }) => {
+            return Library.findOneAndDelete({ _id: gameId });
+          }
 
     }
 }
