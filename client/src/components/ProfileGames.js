@@ -38,7 +38,7 @@ function ProfileGames(props) {
              return (
 
                  <div key={index} data-id={game._id} className="profile-game-card">
-                   <button onClick={handleDelete}>Delete</button>
+                   <button className="profile-game-btn" onClick={handleDelete}>Delete</button>
                    <br></br>
                    <span>{game.game}</span>
                  </div>
