@@ -30,3 +30,11 @@ mutation addGame($user: ID, $game: String!) {
   }
 }
 `
+
+export const DELETE_GAME = gql `
+mutation deleteGame($gameId: ID) {
+  deleteGame(gameId: $gameId) {
+    _id
+    game
+  }
+} `

@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { PROFILE_QUERY } from "../utils/queries";
 
 import GameForm from "../components/GameForm";
+import ProfileGames from '../components/ProfileGames'
 
 
 function Profile() {
@@ -31,17 +32,10 @@ function Profile() {
                       <h3>{user.gamerTag}</h3>
                       <h3>{user.faveConsole}</h3>
                     <div className="gameList">
-
-                      {user.library.map((game, index) => {
-                        return (
-                          <div  key={index}>
-                            <h1>
-                               {game.game}
-                            </h1>
-
-                          </div>
-                        )
-                      })}
+                      <div>
+                    
+                    <ProfileGames {...user} />
+                      </div>
                     </div>
                     
                     </div>
