@@ -8,7 +8,7 @@ import ProfileGames from '../components/ProfileGames'
 function Profile() {
   const { loading, error, data } = useQuery(PROFILE_QUERY);
   let userInfo = JSON.parse(localStorage.getItem("user"));
-  console.log(data);
+
 
 
 
@@ -29,8 +29,10 @@ function Profile() {
                   
                   <div key={index}>
                     <div>
+                      <div className="profile-specs">
                       <h3>{user.gamerTag}</h3>
                       <h3>{user.faveConsole}</h3>
+                      </div>
                     <div className="gameList">
                       <div>
                     
