@@ -3,7 +3,7 @@ import Logout from './utils/logout'
 
 import Profile from "./pages/Profile"
 import Sidebar from "./components/Sidebar";
-
+import Footer from "./components/Footer"
 import Landing from "./pages/Landing";
 import { Routes, Route } from "react-router-dom";
 
@@ -13,6 +13,7 @@ import Pc from "./pages/Pc"
 import Playstation from "./pages/Playstation"
 import Xbox from "./pages/Xbox"
 import Switch from "./pages/Switch"
+import Users from "./pages/Users"
 
 
 import Search from "./pages/Search";
@@ -37,6 +38,7 @@ function App() {
       <Header user={user}/>
       <div className="main">
         <Sidebar />
+        
         <Routes>
           <Route path="/" element={<Landing user={user}></Landing>}></Route>
           <Route path="/auth-form" element={<AuthForm setUser={setUser}></AuthForm>}></Route>
@@ -46,8 +48,9 @@ function App() {
               <Profile  setUser={setUser} ></Profile>
             </Protect>}>
           </Route>
-
+          <Route path="/users" element={<Users></Users>}></Route>
           <Route path="/logout" element={<Logout></Logout>}></Route>
+
           <Route path="/games" element={<Games setUser={setUser} ></Games>}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path='/game/:name' element={<GameDetail/>}></Route>
@@ -56,6 +59,7 @@ function App() {
           <Route path="/games/xbox" element={<Xbox  setUser={setUser} />}></Route>
           <Route path="/games/nintendo-switch" element={<Switch  setUser={setUser} />}></Route>
         </Routes>
+        
       </div>
     </div>
   );
