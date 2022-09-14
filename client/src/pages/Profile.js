@@ -2,11 +2,12 @@ import { useQuery } from "@apollo/client";
 import { PROFILE_QUERY } from "../utils/queries";
 
 import GameForm from "../components/GameForm";
+import ProfileGames from '../components/ProfileGames'
 
 function Profile() {
   const { loading, error, data } = useQuery(PROFILE_QUERY);
   let userInfo = JSON.parse(localStorage.getItem("user"));
-  console.log(data);
+
 
   return (
     <div className="centerProf">
@@ -24,6 +25,18 @@ function Profile() {
                 return (
                   <div key={index}>
                     <div>
+
+                      <div className="profile-specs">
+                      <h3>{user.gamerTag}</h3>
+                      <h3>{user.faveConsole}</h3>
+                      </div>
+                    <div className="gameList">
+                      <div>
+                    
+                    <ProfileGames {...user} />
+                      </div>
+                    </div>
+
                       <h3 className="whiteText biggerText">GamerTag: {user.gamerTag}</h3>
                       <h3 className="whiteText biggerText">Preferred Console: {user.faveConsole}</h3>
                       <div className="gameList whiteText biggerText"> Favorite Games: 
@@ -35,6 +48,7 @@ function Profile() {
                           );
                         })}
                       </div>
+
                     </div>
 
                     <GameForm {...user} />

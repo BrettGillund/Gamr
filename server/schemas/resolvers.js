@@ -64,6 +64,32 @@ const resolvers = {
             await user.save();
             return createdGame;
         },
+
+
+
+        async updateConsole(_, args) {
+            const faveConsole = await User.findByIdAndUpdate(args.id, args, { new: true })
+            console.log(faveConsole)
+            return faveConsole;
+        },
+
+        async updateGamertag(_, args) {
+            const gamerTag = await User.findByIdAndUpdate(args.id, args, { new: true })
+            console.log(gamerTag)
+            return gamerTag;
+        },
+
+        async deleteUser(_, { userId }) {
+           const deletedUser =  await User.findByIdAndDelete({ _id: userId })
+            console.log(deletedUser)
+            return deleteUser;
+           
+           console.log("user deleted")
+        },
+        removeGame: async (parent, { gameId }) => {
+            return Library.findOneAndDelete({ _id: gameId });
+          }
+
         async deleteUser (_, { userId }) {
             return await User.findByIdAndDelete({_id: userId})
             console.log("user deleted")
@@ -72,6 +98,7 @@ const resolvers = {
             return await Library(findByIdAndDelete({_id: gameId}))
             console.log("game deleted")
         }
+
 
     }
 }

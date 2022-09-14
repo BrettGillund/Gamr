@@ -10,7 +10,7 @@ const typeDefs = gql`
     library: [Library]
   }
   type Library {
-    _id: String!
+    _id: ID
     game: String
    
   }
@@ -30,7 +30,7 @@ const typeDefs = gql`
     updateConsole(id: ID!, faveConsole: String!): User
     updateGamertag(id: ID!, gamerTag: String!): User
     deleteUser(userId: ID!): Auth
-    deleteGame(gameId: ID!): Library
+    removeGame(gameId: ID): Library
   }
 `;
 

@@ -383,6 +383,29 @@ header nav a.active {
   color: white;
 }
 
+
+.profile-game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 21vw;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+.profile-game-btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 @media (max-width: 500px) {
   .sBarMain {
     font-size: small;
